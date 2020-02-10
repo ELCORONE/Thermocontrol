@@ -3,8 +3,8 @@
 #include <OneWire.h>
 
 SoftwareSerial BTSerial(10,11);
+// Подключение термометра
 #include <DallasTemperature.h>
-
 #define SENSOR_PIN 5              // датчик температуры
 #define FAN_PIN 9                 // Пин МОСФЕТА на вентиляторы
 #define TEMPERATURE_PRECISION 9   // Расширение бит точности измерения температуры
