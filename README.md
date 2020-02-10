@@ -9,4 +9,4 @@
 
 
 Представленная схема для текущего проекта термоконтроллера для лабораторного блока питания.
-[Схема](https://github.com/ELCORONE/Thermocontrol/blob/master/pcb.png)
+![Схема](https://github.com/ELCORONE/Thermocontrol/blob/master/pcb.png)
