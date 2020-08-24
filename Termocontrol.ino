@@ -12,6 +12,7 @@ GyverTM1637 disp(19, 18);
 #define TEMPERATURE_PRECISION 9   // Расширение бит точности измерения температуры
 
 int sensor_temp, maxtemp, hysteresis, auto_fan;
+float voltmeter = 0;
 
 unsigned long sendTimer;
 
@@ -65,6 +66,7 @@ void loop() {
     disp.displayByte(3, 0x63);
     Cooling();
     sendData();
+    voltmeter = float(analogRead(A0))/204,6;
     sendTimer = millis();
   }
 }
@@ -75,11 +77,15 @@ void sendData() {
   BTSerial.print(maxtemp);
   BTSerial.print("|");
   BTSerial.print(hysteresis);
+  BTSerial.print("|");
+  BTSerial.print(voltmeter);
   Serial.print(sensor_temp);
   Serial.print("|");
   Serial.print(maxtemp);
   Serial.print("|");
   Serial.println(hysteresis);
+  Serial.print("|");
+  Serial.print(voltmeter);
 }
 
 // Команды выполняемые при приёме сообщения по последовательному порту Bluetooth
